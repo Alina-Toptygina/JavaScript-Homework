@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	</head>
+<body>
+<script>
+
+var table = document.createElement('table');
+var tr, td;
+var figure = ["","&#9820;","&#9822;","&#9821;","&#9819;","&#9818;","&#9821;","&#9822;","&#9820;",""];
+var letters = ["","A","B","C","D","E","F","G","H",""];
+var numbers = 0;
+
+
+document.body.style.backgroundImage = "url('wood.jpg')";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundSize = "cover";
+document.body.appendChild(table);
+
+
+table.style.width = "600px";
+table.style.fontSize = "45px";
+table.style.textAlign = "center";
+table.style.margin = "0 auto";
+table.style.color = "white";
+
+for (var i = 0; i < 10; i++) {
+   tr = document.createElement('tr');
+   table.appendChild(tr);
+   	for (var j = 0; j < 10; j++) {
+			numbers++;
+			tr.style.background = "#696969";
+         td = document.createElement('td');
+         td.style.border = "1px solid white";
+         td.style.width = "50px";
+         td.style.height = "50px";
+				if (i == 1) {
+               td.innerHTML = "<span>" + figure[j] + "</span>";
+            }
+               if ((i == 2) || (i == 7)) {
+               	td.innerHTML = "<span>&#9823</span>";
+            }
+					if (i == 8) {
+                  td.innerHTML = "<span>" + figure[j] + "</span>";
+
+            }
+               if ((i == 0) || (i == 9)) {
+               	td.innerHTML="<span>" + letters[j] + "</span>";
+                	td.style.fontSize = "25px";
+                	td.style.background = "#696969";
+				}
+               if ((i == 0)) {
+                     td.style.transform = "rotate(180deg)";
+				}   
+					if(j == 9) {
+                  td.style.transform = "rotate(180deg)";
+				}
+					if (((j == 0) || (j == 9)) && ((i > 0) && (i < 9))) {
+                 	td.innerHTML = "<span>" + i + "</span>";
+                  td.style.fontSize = "25px";
+				}     
+					if ((j > 0) && (j < 9) && (i > 0) && (i < 9)) {
+                  if(numbers % 2 == 0) {
+                  	td.style.background = "#F5DEB3";
+                  } else {
+                  	td.style.background = "#A0522D";
+                  }
+                        
+                  if (i < 4) {
+                  	td.style.color = "#000000";
+                  	td.style.transform = "rotate(180deg)";
+						} else { 
+							td.style.color = "#D2B48C";
+
+					}
+            }
+					tr.appendChild(td);
+				} 
+					numbers++;
+			}			
+
+</script>
+</body>
+</html>
+    		
